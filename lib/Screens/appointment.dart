@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orthodontic_patient_tracker/components/custom_dialog_box.dart';
 
 class Appointments extends StatefulWidget {
   const Appointments({Key? key}) : super(key: key);
@@ -8,7 +9,6 @@ class Appointments extends StatefulWidget {
 }
 
 class _AppointmentsState extends State<Appointments> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,14 @@ class _AppointmentsState extends State<Appointments> {
         child: Column(
           children: [
             TextButton(
-                onPressed: () => {},
+                onPressed: () => {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return  const CustomDialogBox(
+                            );
+                          })
+                    },
                 child: Row(
                   children: [
                     const Icon(
@@ -52,10 +59,9 @@ class _AppointmentsState extends State<Appointments> {
               thickness: 1,
             ),
             Column(
-
               children: [
                 Column(
-                  children:  [
+                  children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,18 +72,26 @@ class _AppointmentsState extends State<Appointments> {
                         ),
                         Column(
                           children: const [
-                            Text('Randevu1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14,), textAlign: TextAlign.left,),
-                            Text('11/02/1991', style: TextStyle( fontSize: 12),textAlign: TextAlign.left),
+                            Text(
+                              'Randevu1',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                            Text('11/02/1991',
+                                style: TextStyle(fontSize: 12),
+                                textAlign: TextAlign.left),
                           ],
                         ),
-
                       ],
                     ),
-
-                    Divider()
+                    const Divider()
                   ],
-                ),Column(
-                  children:  [
+                ),
+                Column(
+                  children: [
                     Row(
                       children: [
                         const Icon(Icons.alarm),
@@ -86,18 +100,30 @@ class _AppointmentsState extends State<Appointments> {
                         ),
                         Column(
                           children: const [
-                            Align(alignment: Alignment.centerLeft,child: Text('Randevu1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14,), textAlign: TextAlign.left,)),
-                            Align(alignment: Alignment.centerLeft,child: Text('11/02/1991', style: TextStyle( fontSize: 12),textAlign: TextAlign.left)),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Randevu1',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                )),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text('11/02/1991',
+                                    style: TextStyle(fontSize: 12),
+                                    textAlign: TextAlign.left)),
                           ],
                         ),
-
                       ],
                     ),
-
-                    Divider()
+                    const Divider()
                   ],
-                ),Column(
-                  children:  [
+                ),
+                Column(
+                  children: [
                     Row(
                       children: [
                         const Icon(Icons.alarm),
@@ -106,15 +132,26 @@ class _AppointmentsState extends State<Appointments> {
                         ),
                         Column(
                           children: const [
-                            Align(alignment: Alignment.centerLeft,child: Text('Randevu1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14,), textAlign: TextAlign.left,)),
-                            Align(alignment: Alignment.centerLeft,child: Text('11/02/1991', style: TextStyle( fontSize: 12),textAlign: TextAlign.left)),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  'Randevu1',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                )),
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text('11/02/1991',
+                                    style: TextStyle(fontSize: 12),
+                                    textAlign: TextAlign.left)),
                           ],
                         ),
-
                       ],
                     ),
-
-                    Divider()
+                    const Divider()
                   ],
                 ),
               ],

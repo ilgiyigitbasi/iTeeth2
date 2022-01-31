@@ -48,9 +48,19 @@ class ButtonsMain extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 55),
                         child: Text(
-                          'Hoş geldiniz! İlgi Yiğitbaşı',
+                          'Hoş geldiniz!',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ]),
+                    Row(children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 55),
+                        child: Text(
+                          'İlgi Yiğitbaşı',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       )
                     ]),
@@ -82,7 +92,7 @@ class ButtonsMain extends StatelessWidget {
                                 children: [
                                   const Icon(CupertinoIcons.alarm),
                                   Container(
-                                      margin: EdgeInsets.only(top: 8),
+                                      margin: const EdgeInsets.only(top: 8),
                                       child: const Text(
                                         'Randevularım',
                                       )),
@@ -111,15 +121,23 @@ class ButtonsMain extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 45, horizontal: 10),
+                                        vertical: 25, horizontal: 10),
                                     child: Column(
                                       children: [
-                                        const Icon(CupertinoIcons.alarm),
-                                        Container(
-                                            margin: const EdgeInsets.only(top: 8),
-                                            child: const Text(
-                                              'Kronometre',
-                                            )),
+                                        Column(
+                                          children: [
+                                            const Icon(CupertinoIcons.timer),
+                                            Container(
+                                                margin:
+                                                const EdgeInsets.only(top: 8),
+                                                child: const Text(
+                                                  'Fırçalamaya',
+                                                )),
+                                            const Text(
+                                              'Başla',
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -165,7 +183,7 @@ class ButtonsMain extends StatelessWidget {
                                               'Fırçalama',
                                             )),
                                         const Text(
-                                          'Günlüğü',
+                                          'Günlüğüm',
                                         ),
                                       ],
                                     ),
@@ -191,9 +209,10 @@ class ButtonsMain extends StatelessWidget {
                                   Container(
                                     margin: const EdgeInsets.only(top:8),
                                     child: const Text(
-                                      'Genel Bilgiler',
+                                      'Tedavimle İlgili',
                                     ),
                                   ),
+                                  const Text('Bilmem Gerekenler', textAlign: TextAlign.center,)
                                 ],
                               ),
                             ),
@@ -209,56 +228,3 @@ class ButtonsMain extends StatelessWidget {
     );
   }
 }
-// Padding(
-// padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 50),
-// child: Column(
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-// ElevatedButton(
-// onPressed: () {},
-// child: Padding(
-// padding: const EdgeInsets.all(45.0),
-// child: Row(
-// mainAxisAlignment: MainAxisAlignment.spaceAround,
-// children: const [
-// Icon(CupertinoIcons.alarm),
-// Text('Randevularım'),
-// ],
-// ),
-// ),
-// ),
-// const SizedBox(
-// height: 25,
-// ),
-// ElevatedButton(
-// onPressed: () {},
-// child: Padding(
-// padding: const EdgeInsets.all(45.0),
-// child: Row(
-// mainAxisAlignment: MainAxisAlignment.spaceAround,
-// children: const [
-// Icon(CupertinoIcons.timer),
-// Text('Kronometre'),
-// ],
-// ),
-// ),
-// ),
-// const SizedBox(
-// height: 25,
-// ),
-// ElevatedButton(
-// onPressed: () {},
-// child: Padding(
-// padding: const EdgeInsets.all(45.0),
-// child: Row(
-// mainAxisAlignment: MainAxisAlignment.spaceAround,
-// children: const [
-// Icon(CupertinoIcons.book),
-// Text('Diş Fırçalama Günlüğüm'),
-// ],
-// ),
-// ),
-// ),
-// ],
-// ),
-// );

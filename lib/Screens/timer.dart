@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
+import 'package:orthodontic_patient_tracker/components/custom_dialog_timer.dart';
 
 class Timer extends StatefulWidget {
   const Timer({Key? key}) : super(key: key);
@@ -9,6 +11,9 @@ class Timer extends StatefulWidget {
 }
 
 class _TimerState extends State<Timer> {
+  int _duration = 5;
+  CountDownController _controller = CountDownController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,74 +26,93 @@ class _TimerState extends State<Timer> {
           onPressed: () => {Navigator.of(context).pop()},
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 30),
-        child: Column(
-          children: [
-            Column(
-              children:  [
-                const Text('00:00', style: TextStyle(fontSize: 75, fontWeight: FontWeight.w900),),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(25.0),
+            decoration:
+                const BoxDecoration(color: Color.fromRGBO(1, 24, 38, 1)),
+            child: Column(
+              children: [
+                CircularCountDownTimer(
+                  width: MediaQuery.of(context).size.width*0.7,
+                  height: MediaQuery.of(context).size.height*0.5,
+                  duration: _duration,
+                  controller: CountDownController(),
+                  isReverse: true,
+                  isReverseAnimation: true,
+                  strokeCap: StrokeCap.round,
+                  strokeWidth: 20,
+                  backgroundColor: const Color.fromRGBO(1, 24, 38, 1),
+                  textStyle: const TextStyle(
+                      fontSize: 75.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                  fillColor: Colors.grey[600]!,
+                  ringColor: Colors.white,
+                  onComplete: () =>
+                       showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return  const CustomDialogBoxTimer(
+                            );
+                          }),
+                ),
                 const SizedBox(
-                  height: 25,
+                  height: 120,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.play_arrow), iconSize: 55,),
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.pause), iconSize: 55,),
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.stop), iconSize: 55,),
+                    IconButton(
+                      onPressed: () => _controller.start(),
+                      icon: const Icon(
+                        Icons.play_arrow,
+                        color: Colors.white,
+                      ),
+                      iconSize: 55,
+                    ),
+                    IconButton(
+                      onPressed: () => _controller.pause(),
+                      icon: const Icon(
+                        Icons.pause,
+                        color: Colors.white,
+                      ),
+                      iconSize: 55,
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.stop,
+                        color: Colors.white,
+                      ),
+                      iconSize: 55,
+                    ),
                   ],
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromRGBO(1, 24, 38, 1),
-                  ) ,
-                  onPressed: () {
-
-                  },
+                  ),
+                  onPressed: () {},
                   child: const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: Text(
                       'Kaydet',
-                      style: TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 12),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontSize: 12),
                     ),
                   ),
                 ),
               ],
             ),
-            const Divider(
-              height: 15,
-              thickness: 1,
-            ),
-            Column(
+          ),
 
-              children: [
-                Column(
-                  children: const [
-                    Align(alignment: Alignment.centerLeft,child: Text('02:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),)),
-                    Align(alignment: Alignment.centerLeft,child: Text('11/02/1991, 15:30', style: TextStyle( fontSize: 12),)),
-                    Divider()
-                  ],
-                ),Column(
-                  children: const [
-                    Align(alignment: Alignment.centerLeft,child: Text('02:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),)),
-                    Align(alignment: Alignment.centerLeft,child: Text('11/02/1991, 15:30', style: TextStyle( fontSize: 12),)),
-                    Divider()
-                  ],
-                ),Column(
-                  children: const [
-                    Align(alignment: Alignment.centerLeft,child: Text('02:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),)),
-                    Align(alignment: Alignment.centerLeft,child: Text('11/02/1991, 15:30', style: TextStyle( fontSize: 12),)),
-                    Divider()
-                  ],
-                ),
-              ],
-            )
-          ],
-        ),
+        ],
       ),
     );
-
   }
 }
