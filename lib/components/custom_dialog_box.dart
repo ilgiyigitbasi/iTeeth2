@@ -45,16 +45,36 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             children: <Widget>[
               const Text('Randevu Ekle',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600),),
               const SizedBox(height: 15,),
-              InputDatePickerFormField(firstDate: DateTime(2022,1), lastDate: DateTime(2025,1)),
-              const SizedBox(height: 22,),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: FlatButton(
-                    onPressed: (){
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('kaydet',style: TextStyle(fontSize: 13),)),
-              ),
+              Form(child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Randevu Adı'
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: InputDatePickerFormField(
+                      firstDate:  DateTime.now(), lastDate:  DateTime.utc(2025),
+                    )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      color: const Color.fromRGBO(1, 24, 38, 1),
+                      child: const Text("Kaydet", style: TextStyle(color: Colors.white),),
+                      onPressed: () {
+
+                        }
+                      ,
+                    ),
+                  )
+                ],
+              ))
             ],
           ),
         ),

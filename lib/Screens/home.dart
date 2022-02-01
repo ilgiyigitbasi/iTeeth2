@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
       extendBodyBehindAppBar:true,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
-        height: 60,
+        height: 80,
         decoration: const BoxDecoration(
           color: Color.fromRGBO(1, 24, 38, 1),
           borderRadius: BorderRadius.only(
@@ -62,83 +62,74 @@ class _HomeState extends State<Home> {
             )
           ]
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
+        child: Padding(
+          padding: const EdgeInsets.only(top:10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-              IconButton(
-                enableFeedback: false,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 0;
-                  });
-                },
-                icon: _selectedIndex == 0
-                    ? const Icon(
-                  Icons.home_filled,
-                  color: Colors.white,
-                  size: 25,
-                )
-                    : const Icon(
-                  Icons.home_outlined,
-                  color: Colors.white,
-                  size: 25,
+                IconButton(
+                  enableFeedback: false,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                    });
+                  },
+                  icon: _selectedIndex == 0
+                      ? const Icon(
+                    Icons.home_filled,
+                    color: Colors.white,
+                    size: 25,
+                  )
+                      : const Icon(
+                    Icons.home_outlined,
+                    color: Colors.white,
+                    size: 25,
+                  ),
                 ),
-              ),
-              IconButton(
-                enableFeedback: false,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 1;
-                  });
-                },
-                icon: _selectedIndex == 1
-                    ? const Icon(
-                  Icons.settings_rounded,
-                  color: Colors.white,
-                  size: 25,
-                )
-                    : const Icon(
-                  Icons.settings_rounded,
-                  color: Colors.white,
-                  size: 25,
+                IconButton(
+                  enableFeedback: false,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                    });
+                  },
+                  icon: _selectedIndex == 1
+                      ? const Icon(
+                    Icons.settings_rounded,
+                    color: Colors.white,
+                    size: 30,
+                  )
+                      : const Icon(
+                    Icons.settings_rounded,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                ),IconButton(
+                  enableFeedback: false,
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                    });
+                  },
+                  icon: _selectedIndex == 2
+                      ? const Icon(
+                    Icons.alarm,
+                    color: Colors.white,
+                    size: 25,
+                  )
+                      : const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 25,
+                  ),
                 ),
-              ),IconButton(
-                enableFeedback: false,
-                onPressed: () {
-                  setState(() {
-                    _selectedIndex = 2;
-                  });
-                },
-                icon: _selectedIndex == 2
-                    ? const Icon(
-                  Icons.alarm,
-                  color: Colors.white,
-                  size: 25,
-                )
-                    : const Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 25,
-                ),
-              ),
-            ],
+              ],
 
+          ),
         ),
       ),
     );
   }
 }
-// bottomNavigationBar: BottomNavigationBar(
-// backgroundColor: const Color.fromRGBO(1, 24, 38, 1),
-// items: const <BottomNavigationBarItem>[
-// BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-// BottomNavigationBarItem(
-// icon: Icon(Icons.settings), label: 'Settings'),
-// BottomNavigationBarItem(
-// icon: Icon(Icons.settings, color: Colors.white,), label: '')
-// ],
-// currentIndex: _selectedIndex,
-// selectedItemColor: const Color.fromRGBO(1, 24, 38, 1),
-// onTap: _onItemTapped,
-// )

@@ -66,7 +66,7 @@ class ButtonsMain extends StatelessWidget {
                     ]),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 35, horizontal: 50),
+                          vertical: 35, horizontal: 35),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,7 +150,7 @@ class ButtonsMain extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 50),
+                          vertical: 0, horizontal: 35),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
