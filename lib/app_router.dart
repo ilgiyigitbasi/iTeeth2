@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:orthodontic_patient_tracker/Screens/Login.dart';
-import 'package:orthodontic_patient_tracker/Screens/appointment.dart';
-import 'package:orthodontic_patient_tracker/Screens/diary.dart';
-import 'package:orthodontic_patient_tracker/Screens/timer.dart';
+import 'dart:async';
 
-import 'Screens/home.dart';
+import 'package:flutter/material.dart';
+import 'package:iTeeth/Screens/home.dart';
+import 'package:iTeeth/Screens/Login.dart';
+import 'package:iTeeth/Screens/appointment.dart';
+import 'package:iTeeth/Screens/diary.dart';
+import 'package:iTeeth/Screens/information_page.dart';
+import 'package:iTeeth/Screens/timer.dart';
+
 import 'constants.dart';
 
 class AppRouter {
@@ -20,8 +23,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => const Appointments());
       case timer_view:
         return MaterialPageRoute(builder: (context) => const Timer());
-        case diary_view:
+      case diary_view:
         return MaterialPageRoute(builder: (context) => const Diary());
+      case information_view:
+        return MaterialPageRoute(builder: (context) => const InformationPage());
       default:
         return MaterialPageRoute(
             builder: (context) => Scaffold(

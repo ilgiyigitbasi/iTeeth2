@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orthodontic_patient_tracker/Screens/Login.dart';
+import 'package:iTeeth/Screens/Login.dart';
 
 import 'app_router.dart';
 import 'constants.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:orthodontic_patient_tracker/Screens/appointment.dart';
-import 'package:orthodontic_patient_tracker/Screens/buttons_main.dart';
-import 'package:orthodontic_patient_tracker/Screens/settings.dart';
+import 'package:iTeeth/Screens/appointment.dart';
+import 'package:iTeeth/Screens/buttons_main.dart';
+import 'package:iTeeth/Screens/settings.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

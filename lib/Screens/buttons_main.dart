@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:orthodontic_patient_tracker/constants.dart';
+import 'package:iTeeth/constants.dart';
 
 class ButtonsMain extends StatelessWidget {
   const ButtonsMain({Key? key}) : super(key: key);
@@ -194,7 +194,10 @@ class ButtonsMain extends StatelessWidget {
                             height: 150,
                             width: 150,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).pushNamed(
+                                    information_view);
+                              },
                               style: ElevatedButton.styleFrom(
                                 primary: const Color.fromRGBO(1, 24, 38, 1),
                                 shape: RoundedRectangleBorder(

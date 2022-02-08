@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
-import 'package:orthodontic_patient_tracker/components/custom_dialog_timer.dart';
+import 'package:iTeeth/components/custom_dialog_timer.dart';
 
 class Timer extends StatefulWidget {
   const Timer({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orthodontic_patient_tracker/components/custom_dialog_box.dart';
+import 'package:iTeeth/components/custom_dialog_box.dart';
 
 class Appointments extends StatefulWidget {
   const Appointments({Key? key}) : super(key: key);
@@ -30,7 +30,10 @@ class _AppointmentsState extends State<Appointments> {
                       showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return  const CustomDialogBox(
+                            return   CustomDialogBox(
+                              onConfirm : () => {
+                                print('ajshdkajshd')
+                              }
                             );
                           })
                     },
