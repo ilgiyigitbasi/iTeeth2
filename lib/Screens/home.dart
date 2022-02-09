@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iTeeth/Screens/appointment.dart';
 import 'package:iTeeth/Screens/buttons_main.dart';
@@ -41,12 +40,12 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBody: true,
       extendBodyBehindAppBar:true,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
-        height: 80,
+        height: size.height*0.09,
         decoration: const BoxDecoration(
           color: Color.fromRGBO(1, 24, 38, 1),
           borderRadius: BorderRadius.only(

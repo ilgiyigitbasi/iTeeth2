@@ -15,7 +15,7 @@ class ButtonsMain extends StatelessWidget {
           Positioned(
               top: 20,
               child: Container(
-                height: size.height * 0.3,
+                height: size.height * 0.25,
                 width: size.width,
                 alignment: Alignment.topRight,
                 child: IconButton(
@@ -28,7 +28,7 @@ class ButtonsMain extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-                height: size.height * 0.8,
+                height: size.height * 0.75,
                 width: size.width,
                 decoration: const BoxDecoration(
                     color: Colors.white,
@@ -38,42 +38,45 @@ class ButtonsMain extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      transform: Matrix4.translationValues(0, -50, 0),
+                      transform: Matrix4.translationValues(0, -size.height*0.06, 0),
                       child: Image.asset(
                         'assets/avatar.png',
-                        height: 100,
+                        height: size.height*0.15,
                       ),
                     ),
-                    Row(children: const [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 55),
-                        child: Text(
+                    Row(mainAxisAlignment: MainAxisAlignment.center,children:  [
+                      Container(
+                        transform: Matrix4.translationValues(0, -size.height*0.06, 0),
+                        height: size.height*0.05,
+                        width:  size.width*0.8,
+                        child: const Text(
                           'Hoş geldiniz!',
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.bold),
                         ),
                       )
                     ]),
-                    Row(children: const [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 55),
-                        child: Text(
+                    Row( mainAxisAlignment: MainAxisAlignment.center,children:  [
+                      Container(
+                        transform: Matrix4.translationValues(0, -size.height*0.06, 0),
+                        height: size.height*0.05,
+                        width: size.width*0.8,
+                        child: const Text(
                           'İlgi Yiğitbaşı',
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.bold),
                         ),
                       )
                     ]),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 35, horizontal: 35),
+                    Container(
+                      transform: Matrix4.translationValues(0, -size.height*0.06, 0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SizedBox(
-                            height: 150,
-                            width: 150,
+                            height: size.height*0.20,
+                            width: size.height*0.20,
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(
@@ -81,7 +84,9 @@ class ButtonsMain extends StatelessWidget {
 
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromRGBO(1, 24, 38, 1),
+                                primary: Colors.white,
+                                elevation: 10,
+                                side: const BorderSide(color: Color.fromRGBO(1, 24, 38, 1), width: 1.5),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25),
                                 ),
@@ -90,19 +95,20 @@ class ButtonsMain extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Icon(CupertinoIcons.alarm),
+                                  Image.asset('assets/calendar.png', height: size.height*0.09,),
                                   Container(
-                                      margin: const EdgeInsets.only(top: 8),
-                                      child: const Text(
+                                      margin:  EdgeInsets.only(top: size.height*0.01),
+                                      child:  Text(
                                         'Randevularım',
+                                        style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold,fontSize: size.height*0.018 ),
                                       )),
                                 ],
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: 150,
-                            width: 150,
+                            height:  size.height*0.20,
+                            width:  size.height*0.20,
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(
@@ -110,9 +116,12 @@ class ButtonsMain extends StatelessWidget {
 
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromRGBO(1, 24, 38, 1),
+                                primary: Colors.white,
+                                elevation: 10,
+                                side: const BorderSide(color: Color.fromRGBO(1, 24, 38, 1), width: 1.5),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25),
+
                                 ),
                               ),
                               child: Column(
@@ -121,20 +130,22 @@ class ButtonsMain extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 25, horizontal: 10),
+                                        vertical: 15, horizontal: 10),
                                     child: Column(
                                       children: [
                                         Column(
                                           children: [
-                                            const Icon(CupertinoIcons.timer),
+                                            Image.asset('assets/toothbrush.png', height: size.height*0.09,),
                                             Container(
                                                 margin:
-                                                const EdgeInsets.only(top: 8),
-                                                child: const Text(
+                                                 EdgeInsets.only(top: size.height*0.01),
+                                                child:  Text(
                                                   'Fırçalamaya',
+                                                  style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018 ),
                                                 )),
-                                            const Text(
+                                            Text(
                                               'Başla',
+                                              style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018  ),
                                             ),
                                           ],
                                         ),
@@ -148,23 +159,25 @@ class ButtonsMain extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 35),
+                    Container(
+                      margin: EdgeInsets.only(top: size.height*0.04),
+                      transform: Matrix4.translationValues(0, -size.height*0.06, 0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SizedBox(
-                            height: 150,
-                            width: 150,
+                            height:  size.height*0.20,
+                            width:  size.height*0.20,
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(
                                     diary_view);
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromRGBO(1, 24, 38, 1),
+                                primary: Colors.white,
+                                elevation: 10,
+                                side: const BorderSide(color: Color.fromRGBO(1, 24, 38, 1), width: 1.5),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25),
                                 ),
@@ -175,15 +188,17 @@ class ButtonsMain extends StatelessWidget {
                                   children: [
                                     Column(
                                       children: [
-                                        const Icon(CupertinoIcons.book),
+                                        Image.asset('assets/dental-record.png', height: size.height*0.09,),
                                         Container(
                                             margin:
-                                                const EdgeInsets.only(top: 8),
-                                            child: const Text(
+                                                 EdgeInsets.only(top: size.height*0.01),
+                                            child:  Text(
                                               'Fırçalama',
+                                              style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018 ),
                                             )),
-                                        const Text(
+                                         Text(
                                           'Günlüğüm',
+                                          style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018 ),
                                         ),
                                       ],
                                     ),
@@ -191,15 +206,17 @@ class ButtonsMain extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 150,
-                            width: 150,
+                            height:  size.height*0.20,
+                            width:  size.height*0.20,
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed(
                                     information_view);
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromRGBO(1, 24, 38, 1),
+                                primary: Colors.white,
+                                elevation: 10,
+                                side: const BorderSide(color: Color.fromRGBO(1, 24, 38, 1), width: 1.5),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25),
                                 ),
@@ -208,14 +225,15 @@ class ButtonsMain extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children:  [
-                                  const Icon(CupertinoIcons.info),
+                                  Image.asset('assets/analysis.png',height: size.height*0.09,),
                                   Container(
-                                    margin: const EdgeInsets.only(top:8),
-                                    child: const Text(
+                                    margin:  EdgeInsets.only(top: size.height*0.01),
+                                    child:  Text(
                                       'Tedavimle İlgili',
+                                      style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018 ),
                                     ),
                                   ),
-                                  const Text('Bilmem Gerekenler', textAlign: TextAlign.center,)
+                                   Text('Bilmem Gerekenler', textAlign: TextAlign.center, style: TextStyle(color:Color.fromRGBO(1, 24, 38, 1), fontWeight: FontWeight.bold, fontSize: size.height*0.018 ),)
                                 ],
                               ),
                             ),

@@ -1,10 +1,10 @@
-
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomDialogBoxTimer extends StatefulWidget {
-  const CustomDialogBoxTimer({Key? key, @required this.isChecked}) : super(key: key);
+  const CustomDialogBoxTimer({Key? key, @required this.isChecked})
+      : super(key: key);
   final isChecked;
 
   @override
@@ -12,6 +12,8 @@ class CustomDialogBoxTimer extends StatefulWidget {
 }
 
 class _CustomDialogBoxState extends State<CustomDialogBoxTimer> {
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -23,52 +25,79 @@ class _CustomDialogBoxState extends State<CustomDialogBoxTimer> {
       child: contentBox(context),
     );
   }
-  contentBox(context){
+
+  contentBox(context) {
     return Stack(
       children: <Widget>[
         Container(
-          padding: const EdgeInsets.only(left: 20,top: 45
-              + 20, right: 20,bottom: 20
-          ),
+          padding: const EdgeInsets.only(
+              left: 20, top: 45 + 20, right: 20, bottom: 20),
           margin: const EdgeInsets.only(top: 45),
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
               boxShadow: const [
-                BoxShadow(color: Colors.black,offset: Offset(0,10),
-                    blurRadius: 10
-                ),
-              ]
-          ),
+                BoxShadow(
+                    color: Colors.black, offset: Offset(0, 10), blurRadius: 10),
+              ]),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const Text('Tebrikler',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600),),
-              const SizedBox(height: 15,),
+              const Text(
+                'Tebrikler',
+                style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
               const Text('Fırçalamayı tamamladınız!'),
-              const SizedBox(height: 22,),
+              const SizedBox(
+                height: 22,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Checkbox(
+                    value: isChecked,
+                    onChanged: (value) {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                    },
+                  ),
+
+                  Text('Arayüz fırçası kullandım')
+                ],
+              ),
+
               Align(
                 alignment: Alignment.bottomRight,
-                child: FlatButton(
-                    onPressed: (){
+                child: TextButton(
+                    onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Text('kaydet',style: TextStyle(fontSize: 13),)),
+                    child: const Text(
+                      'Kaydet',
+                      style: TextStyle(fontSize: 13),
+                    )),
               ),
             ],
           ),
         ),
-        const Positioned(
+         Positioned(
           left: 20,
           right: 20,
           child: CircleAvatar(
-            backgroundColor: Color.fromRGBO(1, 24, 38, 1),
+            backgroundColor: Colors.grey[200],
             radius: 45,
-            child: ClipRRect(
+            child: const ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(45)),
-                child: Icon(Icons.add_circle, color: Colors.white, size: 48,)
-            ),
+                child: Icon(
+                  Icons.add_circle,
+                  color: Colors.white,
+                  size: 48,
+                )),
           ),
         ),
       ],

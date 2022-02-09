@@ -26,7 +26,8 @@ class _TimerState extends State<Timer> {
           onPressed: () => {Navigator.of(context).pop()},
         ),
       ),
-      body: Column(
+      body:
+      Column(
         children: [
           Container(
             padding: const EdgeInsets.all(25.0),
@@ -36,7 +37,7 @@ class _TimerState extends State<Timer> {
               children: [
                 CircularCountDownTimer(
                   width: MediaQuery.of(context).size.width*0.7,
-                  height: MediaQuery.of(context).size.height*0.5,
+                  height: MediaQuery.of(context).size.height*0.5612,
                   duration: _duration,
                   controller: CountDownController(),
                   isReverse: true,
